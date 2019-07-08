@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace Http\Factory;
 
@@ -9,7 +10,6 @@ use Psr\Http\Message\ServerRequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\UploadedFileFactoryInterface;
 use Psr\Http\Message\UriFactoryInterface;
-
 use RuntimeException;
 
 /**
@@ -67,9 +67,9 @@ final class Psr17FactoryFinder
     private static $cache = [];
 
     /**
-     * @return RequestFactoryInterface
-     *
      * @throws RuntimeException
+     *
+     * @return RequestFactoryInterface
      */
     public static function findRequestFactory(): RequestFactoryInterface
     {
@@ -77,10 +77,11 @@ final class Psr17FactoryFinder
 
         return $requestFactory;
     }
+
     /**
-     * @return ResponseFactoryInterface
-     *
      * @throws RuntimeException
+     *
+     * @return ResponseFactoryInterface
      */
     public static function findResponseFactory(): ResponseFactoryInterface
     {
@@ -88,10 +89,11 @@ final class Psr17FactoryFinder
 
         return $responseFactory;
     }
+
     /**
-     * @return ServerRequestFactoryInterface
-     *
      * @throws RuntimeException
+     *
+     * @return ServerRequestFactoryInterface
      */
     public static function findServerRequestFactory(): ServerRequestFactoryInterface
     {
@@ -99,10 +101,11 @@ final class Psr17FactoryFinder
 
         return $serverRequestFactory;
     }
+
     /**
-     * @return StreamFactoryInterface
-     *
      * @throws RuntimeException
+     *
+     * @return StreamFactoryInterface
      */
     public static function findStreamFactory(): StreamFactoryInterface
     {
@@ -110,10 +113,11 @@ final class Psr17FactoryFinder
 
         return $streamFactory;
     }
+
     /**
-     * @return UploadedFileFactoryInterface
-     *
      * @throws RuntimeException
+     *
+     * @return UploadedFileFactoryInterface
      */
     public static function findUploadedFileFactory(): UploadedFileFactoryInterface
     {
@@ -121,10 +125,11 @@ final class Psr17FactoryFinder
 
         return $uploadedFileFactory;
     }
+
     /**
-     * @return UriFactoryInterface
-     *
      * @throws RuntimeException
+     *
+     * @return UriFactoryInterface
      */
     public static function findUriFactory(): UriFactoryInterface
     {
@@ -138,13 +143,13 @@ final class Psr17FactoryFinder
      *
      * @param string $interface
      *
-     * @return mixed
-     *
      * @throws RuntimeException
+     *
+     * @return mixed
      */
     private static function makeInstance(string $interface)
     {
-    	// Look in the cache first.
+        // Look in the cache first.
         if (! empty(self::$cache[$interface])) {
             return self::$cache[$interface];
         }
