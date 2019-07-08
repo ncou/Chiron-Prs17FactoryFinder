@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Http\Factory;
 
-class ExampleTest extends \PHPUnit\Framework\TestCase
+class Psr17FactoryFinderTest extends \PHPUnit\Framework\TestCase
 {
     public function testCanFindRequestFactory(): void
     {
