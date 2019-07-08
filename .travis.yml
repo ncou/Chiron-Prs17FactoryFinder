@@ -24,5 +24,7 @@ script:
   - composer test
 
 after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+  #- wget https://scrutinizer-ci.com/ocular.phar
+  #- php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+  # Submit coverage report to codecov.io
+  - bash <(curl -s https://codecov.io/bash)
