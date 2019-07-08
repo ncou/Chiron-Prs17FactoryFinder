@@ -10,7 +10,7 @@ composerBackup=$(cat composer.json)
 #composer remove --dev -n nyholm/psr7 php-http/guzzle6-adapter
 
 testImplementation() {
-    echo "Testing $1 version $2 ..."
+    echo -e "\e[44mTesting $1 version $2 ...\e[0m"
     echo
     composer require --dev -n $COMPOSER_FLAGS "$1" "$2"
     composer test-factory || return 1
