@@ -1,5 +1,5 @@
 {
-    "name": "ncou/",
+    "name": "chiron/psr17factoryfinder",
     "type": "library",
     "description": "short description",
     "keywords": [
@@ -35,7 +35,7 @@
     },
     "scripts": {
         "test": "bash scripts/test-all-factory-lib.sh",
-        "test-factory": "phpunit --testdox",
+        "test-factory": "phpunit --testdox --colors=always",
         "check-style": "phpcs src tests",
         "fix-style": "phpcbf src tests",
         "phpstan": "phpstan analyse -l 7 --no-progress src tests"
