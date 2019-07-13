@@ -14,8 +14,7 @@
     "homepage": "https://github.com/ncou/",
     "license": "MIT",
     "require": {
-        "php" : "~7.1",
-        "psr/http-factory": "^1.0"
+        "php" : "^7.1"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.10.3",
