@@ -4,13 +4,15 @@ if [ -z "$COMPOSER_FLAGS" ]; then
     COMPOSER_FLAGS=
 fi
 
-echo "Backing up package state ..."
+echo
+echo "<comment>Backing up package state ...</>"
+echo
 composerBackup=$(cat composer.json)
 
 #composer remove --dev -n nyholm/psr7 php-http/guzzle6-adapter
 
 testImplementation() {
-    echo -e "\e[44m Testing $1 version $2 ... \e[0m"
+    echo -e "<bg=blue>Testing $1 version $2 ...</>"
     echo
     composer require --dev -n $COMPOSER_FLAGS "$1" "$2"
     composer test-factory || return 1
@@ -24,6 +26,6 @@ testImplementation nyholm/psr7 "^1.1" || exit 1
 testImplementation zendframework/zend-diactoros "^2.1" || exit 1
 testImplementation slim/psr7 "^0.3" || exit 1
 
-echo "Resetting package state ..."
+echo "<comment>Resetting package state ...</comment>"
 echo "$composerBackup" > composer.json
 composer update -n -q $COMPOSER_FLAGS
