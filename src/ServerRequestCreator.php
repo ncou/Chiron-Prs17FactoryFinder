@@ -74,9 +74,9 @@ final class ServerRequestCreator
 
         throw new RuntimeException(
             'Could not detect any ServerRequest creator implementations.' .
-            'Please install one of the following supported package : '.
+            'Please install one of the following supported package : ' .
             implode(', ', array_keys(self::$providers))
-         );
+        );
     }
 
     /**

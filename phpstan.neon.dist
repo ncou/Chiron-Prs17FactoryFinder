@@ -5,7 +5,7 @@ includes:
 parameters:
     fileExtensions:
         - php
-    reportUnmatchedIgnoredErrors: true
+    reportUnmatchedIgnoredErrors: false
     ignoreErrors:
         - '#Instantiated class Nyholm\\Psr7\\Factory\\Psr17Factory not found#'
         - '#Instantiated class Nyholm\\Psr7Server\\ServerRequestCreator not found#'
