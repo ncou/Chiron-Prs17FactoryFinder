@@ -28,3 +28,10 @@ after_script:
   #- php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
   # Submit coverage report to codecov.io
   - bash <(curl -s https://codecov.io/bash)
+
+# Tell Travis CI to monitor only 'master' branch
+branches:
+  only: master
+
+notifications:
+  email: false
