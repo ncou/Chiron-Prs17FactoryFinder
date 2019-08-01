@@ -1,4 +1,4 @@
-# :factory: :mag: HTTP-Factory
+# :mag_right::factory: HTTP-Factory
 
 [![Travis](https://img.shields.io/travis/tbreuss/http-factory.svg)](https://travis-ci.org/tbreuss/http-factory)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/tbreuss/http-factory.svg)](https://scrutinizer-ci.com/g/tbreuss/http-factory/)
