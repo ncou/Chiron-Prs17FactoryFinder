@@ -18,8 +18,9 @@
         "psr/http-factory": "^1.0"
     },
     "require-dev": {
-        "phpstan/phpstan": "^0.10.3",
-        "phpstan/phpstan-phpunit": "^0.10.0",
+        "phpstan/phpstan": "^0.11",
+        "phpstan/phpstan-phpunit": "^0.11",
+        "phpstan/phpstan-strict-rules": "^0.11",
         "phpunit/phpunit": "^7.3",
         "squizlabs/php_codesniffer": "^3.3"
     },
@@ -38,7 +39,7 @@
         "test-factory": "phpunit --testdox --colors=always",
         "check-style": "phpcs src tests",
         "fix-style": "phpcbf src tests",
-        "phpstan": "phpstan analyse -l 7 --no-progress src tests"
+        "phpstan": "phpstan analyse -l max --no-progress src tests"
     },
     "extra": {
         "branch-alias": {

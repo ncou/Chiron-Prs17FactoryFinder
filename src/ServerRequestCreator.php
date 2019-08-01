@@ -37,7 +37,7 @@ final class ServerRequestCreator
     /**
      * Internal cache to store the first provider detected.
      *
-     * @var string
+     * @var array
      */
     private static $provider;
 
@@ -60,7 +60,7 @@ final class ServerRequestCreator
      */
     private static function detectProvider(): array
     {
-        if (!empty(self::$provider)) {
+        if (isset(self::$provider)) {
             return self::$provider;
         }
 
@@ -82,7 +82,7 @@ final class ServerRequestCreator
     /**
      * Evaluates conditions to boolean.
      *
-     * @param string|string[] $condition
+     * @param string[]|string $condition
      *
      * @return bool
      */
@@ -114,9 +114,9 @@ final class ServerRequestCreator
      */
     private static function wrapFromGlobalsMethod(): ServerRequestInterface
     {
-        $psr17Factory = new Nyholm\Psr7\Factory\Psr17Factory();
+        $psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
 
-        $creator = new Nyholm\Psr7Server\ServerRequestCreator(
+        $creator = new \Nyholm\Psr7Server\ServerRequestCreator(
             $psr17Factory, // ServerRequestFactory
             $psr17Factory, // UriFactory
             $psr17Factory, // UploadedFileFactory
