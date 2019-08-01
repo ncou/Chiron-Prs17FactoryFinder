@@ -1,14 +1,22 @@
 <?xml version="1.0"?>
-<ruleset name="">
-    <description>The coding standard of  package</description>
-    <arg value="p" />
+<ruleset name="Project" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+    <description>PHP Coding Standards for Project</description>
 
-    <config name="ignore_warnings_on_exit" value="1" />
-    <config name="ignore_errors_on_exit" value="1" />
-
+    <arg name="basepath" value="."/>
+    <arg name="cache" value=".phpcs-cache"/>
     <arg name="colors" />
-    <arg value="s" />
+    <arg name="encoding" value="UTF-8"/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="80"/>
+    <arg name="report" value="code"/>
+    <arg name="report-width" value="160"/>
 
-    <!-- Use the PSR12 Standard-->
-    <rule ref="PSR12" />
+    <!-- Show progress of the run -->
+    <arg value="nps"/>
+
+    <file>src/</file>
+    <file>tests/</file>
+
+    <!-- Load the ruleset.xml file present in this folder -->
+    <rule ref="ChironCodingStandard"/>
 </ruleset>
