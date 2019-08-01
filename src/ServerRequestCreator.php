@@ -18,19 +18,19 @@ final class ServerRequestCreator
     private static $providers = [
         'nyholm/psr7-server' => [
             'condition' => ['Nyholm\Psr7Server\ServerRequestCreator', 'Nyholm\Psr7\Factory\Psr17Factory'],
-            'callable' => [self::class, 'wrapFromGlobalsMethod'],
+            'callable'  => [self::class, 'wrapFromGlobalsMethod'],
         ],
         'guzzlehttp/psr7' => [
             'condition' => 'GuzzleHttp\Psr7\ServerRequest',
-            'callable' => ['GuzzleHttp\Psr7\ServerRequest','fromGlobals'],
+            'callable'  => ['GuzzleHttp\Psr7\ServerRequest', 'fromGlobals'],
         ],
         'slim/psr7' => [
             'condition' => 'Slim\Psr7\Factory\ServerRequestFactory',
-            'callable' => ['Slim\Psr7\Factory\ServerRequestFactory','createFromGlobals'],
+            'callable'  => ['Slim\Psr7\Factory\ServerRequestFactory', 'createFromGlobals'],
         ],
         'zendframework/zend-diactoros' => [
             'condition' => 'Zend\Diactoros\ServerRequestFactory',
-            'callable' => ['Zend\Diactoros\ServerRequestFactory','fromGlobals'],
+            'callable'  => ['Zend\Diactoros\ServerRequestFactory', 'fromGlobals'],
         ],
     ];
 
@@ -99,6 +99,7 @@ final class ServerRequestCreator
                     return false;
                 }
             }
+
             return true;
         }
 
