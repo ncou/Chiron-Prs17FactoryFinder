@@ -42,9 +42,9 @@ final class ServerRequestCreator
     private static $provider;
 
     /**
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
-     * @return ServerRequestInterface
+     * @return \Psr\Http\Message\ServerRequestInterface
      */
     public static function fromGlobals(): ServerRequestInterface
     {
@@ -54,7 +54,7 @@ final class ServerRequestCreator
     }
 
     /**
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
      * @return array The provider datas
      */
@@ -109,14 +109,16 @@ final class ServerRequestCreator
     /**
      * Proxy used to convert the Nyholm "fromGlobals" method as "static".
      *
-     * @throws RuntimeException If no PSR17 factories are found.
+     * @throws \RuntimeException If no PSR17 factories are found.
      *
-     * @return ServerRequestInterface
+     * @return \Psr\Http\Message\ServerRequestInterface
      */
     private static function wrapFromGlobalsMethod(): ServerRequestInterface
     {
+        // phpcs:ignore
         $psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
 
+        // phpcs:ignore
         $creator = new \Nyholm\Psr7Server\ServerRequestCreator(
             $psr17Factory, // ServerRequestFactory
             $psr17Factory, // UriFactory

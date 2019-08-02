@@ -67,9 +67,9 @@ final class Psr17FactoryFinder
     private static $cache = [];
 
     /**
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
-     * @return RequestFactoryInterface
+     * @return \Psr\Http\Message\RequestFactoryInterface
      */
     public static function findRequestFactory(): RequestFactoryInterface
     {
@@ -79,9 +79,9 @@ final class Psr17FactoryFinder
     }
 
     /**
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
-     * @return ResponseFactoryInterface
+     * @return \Psr\Http\Message\ResponseFactoryInterface
      */
     public static function findResponseFactory(): ResponseFactoryInterface
     {
@@ -91,9 +91,9 @@ final class Psr17FactoryFinder
     }
 
     /**
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
-     * @return ServerRequestFactoryInterface
+     * @return \Psr\Http\Message\ServerRequestFactoryInterface
      */
     public static function findServerRequestFactory(): ServerRequestFactoryInterface
     {
@@ -103,9 +103,9 @@ final class Psr17FactoryFinder
     }
 
     /**
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
-     * @return StreamFactoryInterface
+     * @return \Psr\Http\Message\StreamFactoryInterface
      */
     public static function findStreamFactory(): StreamFactoryInterface
     {
@@ -115,9 +115,9 @@ final class Psr17FactoryFinder
     }
 
     /**
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
-     * @return UploadedFileFactoryInterface
+     * @return \Psr\Http\Message\UploadedFileFactoryInterface
      */
     public static function findUploadedFileFactory(): UploadedFileFactoryInterface
     {
@@ -127,9 +127,9 @@ final class Psr17FactoryFinder
     }
 
     /**
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
-     * @return UriFactoryInterface
+     * @return \Psr\Http\Message\UriFactoryInterface
      */
     public static function findUriFactory(): UriFactoryInterface
     {
@@ -143,7 +143,7 @@ final class Psr17FactoryFinder
      *
      * @param string $interface
      *
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
      * @return mixed
      */
