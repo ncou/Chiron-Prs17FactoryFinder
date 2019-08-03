@@ -150,7 +150,7 @@ final class Psr17FactoryFinder
     private static function makeInstance(string $interface)
     {
         // Look in the cache first.
-        if (isset(self::$cache[$interface])) {
+        if (! empty(self::$cache[$interface])) {
             return self::$cache[$interface];
         }
 

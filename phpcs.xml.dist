@@ -10,7 +10,6 @@
     <arg name="parallel" value="80"/>
     <arg name="report" value="code"/>
     <arg name="report-width" value="160"/>
-
     <!-- Show progress of the run -->
     <arg value="p"/>
     <!-- Do not print warning -->
@@ -22,8 +21,5 @@
     <file>tests/</file>
 
     <!-- Load the ruleset.xml file from this folder -->
-    <rule ref="ChironCodingStandard">
-        <!-- If needed you can exclude some sniffs by name -->
-        <!-- <exclude name="Generic.Files.LineLength"/> -->
-    </rule>
+    <rule ref="ChironCodingStandard"/>
 </ruleset>
