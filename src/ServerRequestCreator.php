@@ -60,7 +60,7 @@ final class ServerRequestCreator
      */
     private static function detectProvider(): array
     {
-        if (! empty(self::$provider)) {
+        if (isset(self::$provider)) {
             return self::$provider;
         }
 
