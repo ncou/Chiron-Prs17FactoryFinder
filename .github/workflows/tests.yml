@@ -39,10 +39,10 @@ jobs:
           composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Run unit tests
-        run: composer phpunit
+        run: vendor/bin/phpunit
 
       - name: Run tests with phpunit and coverage on Linux php 8.1
-        if: matrix.os == 'ubuntu-latest' && matrix.php == '8.1'
+        if: matrix.os == 'ubuntu-latest' && matrix.php == '8.1' && matrix.psr7 == 'nyholm/psr7'
         run: vendor/bin/phpunit --coverage-clover=coverage.clover
 
       - name: Send code coverage report to Codecov.io
@@ -50,3 +50,33 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+
+  error:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        php: ["8.1"]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup PHP and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+      - name: Set composer cache
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Cache composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          #key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Run unit tests - without psr17 packages
+        run: vendor/bin/phpunit --group=NothingInstalled
