@@ -37,9 +37,16 @@ jobs:
         run: |
           composer require --no-progress ${{ matrix.psr7 }}
           composer install --no-progress --prefer-dist --optimize-autoloader
+
       - name: Run unit tests
         run: composer phpunit
-      # - name: Run static analysis
-      #   run: make static
-      - name: Upload coverage
+
+      - name: Run tests with phpunit and coverage on Linux php 8.1
+        if: matrix.os == 'ubuntu-latest' && matrix.php == '8.1'
+        run: vendor/bin/phpunit --coverage-clover=coverage.clover
+
+      - name: Send code coverage report to Codecov.io
+        if: matrix.os == 'ubuntu-latest' && matrix.php == '8.1'
         uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
