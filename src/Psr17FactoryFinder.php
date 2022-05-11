@@ -12,6 +12,15 @@ use Psr\Http\Message\UploadedFileFactoryInterface;
 use Psr\Http\Message\UriFactoryInterface;
 use RuntimeException;
 
+// TODO : utiliser ce workflow github pour tester le discover des factories PSR17 :    https://github.com/tuupola/http-factory/blob/master/.github/workflows/tests.yml
+//https://github.com/tuupola/http-factory
+
+
+//https://github.com/http-interop/http-factory-discovery/blob/master/src/FactoryLocator.php
+//https://github.com/php-http/discovery/blob/master/src/Strategy/CommonPsr17ClassesStrategy.php
+
+// TODO : ajouter Laminas/Diactoros et Sunrise factory
+
 /**
  * Finds PSR-17 factories.
  */

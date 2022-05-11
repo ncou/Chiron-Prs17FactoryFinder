@@ -1,7 +1,8 @@
 {
     "name": "chiron/psr17factoryfinder",
-    "type": "library",
     "description": "short description",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "discovery",
         "factory",
@@ -12,17 +13,15 @@
         "psr17"
     ],
     "homepage": "https://github.com/ncou/",
-    "license": "MIT",
     "require": {
-        "php": "^8.0|^8.1",
+        "php": "^8.0 || ^8.1",
         "psr/http-factory": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
-        "phpstan/phpstan": "^0.12",
-        "phpstan/phpstan-phpunit": "^0.12",
-        "chiron/coding-standard": "^3.0"
+        "chiron/devtools": "^1.0"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Http\\Factory\\": "src"
@@ -33,20 +32,30 @@
             "Http\\Factory\\": "tests"
         }
     },
-    "scripts": {
-        "test": "bash scripts/test-all-factory-lib.sh",
-        "test-factory": "phpunit --testdox --colors=always",
-        "check-style": "phpcs src tests",
-        "fix-style": "phpcbf src tests",
-        "phpstan": "phpstan analyse -l max --no-progress src tests"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
-    },
     "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ocramius/package-versions": true,
+            "composer/package-versions-deprecated": true,
+            "phpstan/extension-installer": true,
+            "ergebnis/composer-normalize": true,
+            "captainhook/plugin-composer": true,
+            "chiron/devtools": true
+        },
         "sort-packages": true
     },
-    "minimum-stability": "stable"
+    "extra": {
+        "captainhook": {
+            "force-install": true
+        },
+        "chiron/devtools": {
+            "command-prefix": "dev"
+        },
+        "ramsey/conventional-commits": {
+            "configFile": "conventional-commits.json"
+        }
+    },
+    "scripts": {
+        "phpunit": "devtools dev:test:unit -- --colors=always --testdox --verbose"
+    }
 }

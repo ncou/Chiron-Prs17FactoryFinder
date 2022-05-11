@@ -1,13 +1,6 @@
-includes:
-    - vendor/phpstan/phpstan-phpunit/extension.neon
-    - vendor/phpstan/phpstan-phpunit/rules.neon
-    - vendor/phpstan/phpstan-strict-rules/rules.neon
 parameters:
-    fileExtensions:
-        - php
-    reportUnmatchedIgnoredErrors: false
-    ignoreErrors:
-        - '#Instantiated class Nyholm\\Psr7\\Factory\\Psr17Factory not found#'
-        - '#Instantiated class Nyholm\\Psr7Server\\ServerRequestCreator not found#'
-        - '#Call to method fromGlobals\(\) on an unknown class Nyholm\\Psr7Server\\ServerRequestCreator#'
-        - '#Call to function is_array\(\) with array<string> will always evaluate to true#'
+    tmpDir: ./build/cache/phpstan
+    level: max
+    paths:
+        - ./src
+        - ./tests
