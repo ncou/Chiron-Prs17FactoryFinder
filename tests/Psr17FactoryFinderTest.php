@@ -17,7 +17,7 @@ class Psr17FactoryFinderTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider getFactories
      */
-    public function testFind($method, $interface)
+    public function testFindFactory($method, $interface)
     {
         $callable = [Psr17FactoryFinder::class, $method];
         $client = $callable();
@@ -28,7 +28,7 @@ class Psr17FactoryFinderTest extends \PHPUnit\Framework\TestCase
      * @group NothingInstalled
      * @dataProvider getFactories
      */
-    public function testNotFound($method)
+    public function testFactoryNotFound($method)
     {
         $callable = [Psr17FactoryFinder::class, $method];
         $this->expectException(RuntimeException::class);

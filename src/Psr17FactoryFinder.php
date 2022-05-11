@@ -14,12 +14,8 @@ use RuntimeException;
 
 // TODO : utiliser ce workflow github pour tester le discover des factories PSR17 :    https://github.com/tuupola/http-factory/blob/master/.github/workflows/tests.yml
 //https://github.com/tuupola/http-factory
-
-
 //https://github.com/http-interop/http-factory-discovery/blob/master/src/FactoryLocator.php
 //https://github.com/php-http/discovery/blob/master/src/Strategy/CommonPsr17ClassesStrategy.php
-
-// TODO : ajouter Laminas/Diactoros et Sunrise factory
 
 /**
  * Finds PSR-17 factories.
@@ -33,38 +29,45 @@ final class Psr17FactoryFinder
         RequestFactoryInterface::class => [
             'Nyholm\Psr7\Factory\Psr17Factory',
             'GuzzleHttp\Psr7\HttpFactory',
-            'Zend\Diactoros\RequestFactory',
+            'Laminas\Diactoros\RequestFactory',
             'Slim\Psr7\Factory\RequestFactory',
+            'Sunrise\Http\Factory\RequestFactory',
         ],
         ResponseFactoryInterface::class => [
             'Nyholm\Psr7\Factory\Psr17Factory',
             'GuzzleHttp\Psr7\HttpFactory',
-            'Zend\Diactoros\ResponseFactory',
+            'Laminas\Diactoros\ResponseFactory',
             'Slim\Psr7\Factory\ResponseFactory',
+            'Sunrise\Http\Factory\ResponseFactory',
         ],
         ServerRequestFactoryInterface::class => [
             'Nyholm\Psr7\Factory\Psr17Factory',
             'GuzzleHttp\Psr7\HttpFactory',
-            'Zend\Diactoros\ServerRequestFactory',
+            'Laminas\Diactoros\ServerRequestFactory',
             'Slim\Psr7\Factory\ServerRequestFactory',
+            'Sunrise\Http\Factory\ServerRequestFactory',
         ],
         StreamFactoryInterface::class => [
             'Nyholm\Psr7\Factory\Psr17Factory',
             'GuzzleHttp\Psr7\HttpFactory',
-            'Zend\Diactoros\StreamFactory',
+            'Laminas\Diactoros\StreamFactory',
             'Slim\Psr7\Factory\StreamFactory',
+            'Sunrise\Http\Factory\StreamFactory',
+            'Sunrise\Http\Factory\StreamFactory',
         ],
         UploadedFileFactoryInterface::class => [
             'Nyholm\Psr7\Factory\Psr17Factory',
             'GuzzleHttp\Psr7\HttpFactory',
-            'Zend\Diactoros\UploadedFileFactory',
+            'Laminas\Diactoros\UploadedFileFactory',
             'Slim\Psr7\Factory\UploadedFileFactory',
+            'Sunrise\Http\Factory\UploadedFileFactory',
         ],
         UriFactoryInterface::class => [
             'Nyholm\Psr7\Factory\Psr17Factory',
             'GuzzleHttp\Psr7\HttpFactory',
-            'Zend\Diactoros\UriFactory',
+            'Laminas\Diactoros\UriFactory',
             'Slim\Psr7\Factory\UriFactory',
+            'Sunrise\Http\Factory\UriFactory',
         ],
     ];
 

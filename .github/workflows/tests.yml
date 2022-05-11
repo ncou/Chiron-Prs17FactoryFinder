@@ -9,7 +9,9 @@ jobs:
         psr7: [
           "nyholm/psr7",
           "slim/psr7",
-          "laminas/laminas-diactoros"
+          "guzzlehttp/psr7",
+          "laminas/laminas-diactoros",
+          "sunrise/http-factory"
         ]
       fail-fast: false
     runs-on: ${{ matrix.os }}
