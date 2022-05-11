@@ -11,6 +11,7 @@ jobs:
           "slim/psr7",
           "laminas/laminas-diactoros"
         ]
+      fail-fast: false
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Checkout code
