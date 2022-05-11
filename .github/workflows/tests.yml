@@ -1,3 +1,4 @@
+# TODO : faire un phpcov pour merger les codecoverage rapport avec et sans group phpunit: https://github.com/api-platform/core/blob/60240f506802883a8f02b7015b9d676f8a2897d5/.github/workflows/ci.yml#L269
 name: Tests
 on: [push, pull_request]
 jobs:

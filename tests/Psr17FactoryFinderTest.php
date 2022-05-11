@@ -22,6 +22,8 @@ class Psr17FactoryFinderTest extends \PHPUnit\Framework\TestCase
         $callable = [Psr17FactoryFinder::class, $method];
         $client = $callable();
         $this->assertInstanceOf($interface, $client);
+        // Check if the factory is correctly cached.
+        $this->assertEquals($client, $callable());
     }
 
     /**
