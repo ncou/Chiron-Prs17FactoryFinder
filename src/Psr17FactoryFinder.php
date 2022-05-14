@@ -174,6 +174,6 @@ final class Psr17FactoryFinder
             return self::$cache[$interface] = new $candidate();
         }
 
-        throw new RuntimeException("No PSR-17 implementations found for $interface");
+        throw new RuntimeException("No PSR-17 implementations found for $interface"); // TODO : créer une exception dédié ??? https://github.com/php-http/discovery/blob/master/src/Exception/NotFoundException.php
     }
 }
